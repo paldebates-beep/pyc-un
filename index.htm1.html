@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UN Missions — Email & Phone Directory (All countries)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root{
+      --card-bg: #ffffff;
+      --page-gradient-start: #e3f2fd;
+      --page-gradient-end: #fce4ec;
+      --accent: #0645AD;
+      --muted: #555;
+    }
+    html,body{height:100%;margin:0;}
+    body{
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg,var(--page-gradient-start),var(--page-gradient-end));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .card{
+      width:100%;
+      max-width:920px;
+      background:var(--card-bg);
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(12,40,80,0.12);
+      padding:22px;
+    }
+    h1{margin:0 0 6px 0;font-size:20px;}
+    p.lead{margin:0 0 18px 0;color:var(--muted);font-size:14px;}
+    select{
+      width:100%;
+      padding:12px;
+      border-radius:8px;
+      border:1px solid #ddd;
+      font-size:15px;
+      box-sizing:border-box;
+      margin-bottom:16px;
+      background:#fff;
+    }
+    .info{
+      margin-top:12px;
+      padding:14px;
+      border-radius:8px;
+      background:#fcfcff;
+      border:1px solid #f0f2f8;
+      min-height:96px;
+    }
+    .info h2{margin:0 0 8px 0;font-size:18px;}
+    .info p{margin:6px 0;color:#222;font-size:15px;}
+    .muted{color:var(--muted);font-size:14px;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .small{font-size:13px;color:#666;margin-top:10px;}
+    @media (max-width:600px){
+      .card{padding:14px}
+      h1{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <h1>UN Missions — Email & Phone Directory (All countries)</h1>
+    <p class="lead">Select a country to view the mission's email and phone. Data filled where available ; other entries are left empty for later completion. 
+        developed by PYC </p>
+
+    <label for="countrySelect" class="muted">Choose country</label>
+    <select id="countrySelect" aria-label="Select country">
+      <option value="">-- Select Country --</option>
+      <!-- Full list of UN member states (names used as keys in the JS object) -->
+      <option>Afghanistan</option>
+      <option>Albania</option>
+      <option>Algeria</option>
+      <option>Andorra</option>
+      <option>Angola</option>
+      <option>Antigua and Barbuda</option>
+      <option>Argentina</option>
+      <option>Armenia</option>
+      <option>Australia</option>
+      <option>Austria</option>
+      <option>Azerbaijan</option>
+      <option>Bahamas</option>
+      <option>Bahrain</option>
+      <option>Bangladesh</option>
+      <option>Barbados</option>
+      <option>Belarus</option>
+      <option>Belgium</option>
+      <option>Belize</option>
+      <option>Benin</option>
+      <option>Bhutan</option>
+      <option>Bolivia</option>
+      <option>Bosnia and Herzegovina</option>
+      <option>Botswana</option>
+      <option>Brazil</option>
+      <option>Brunei</option>
+      <option>Bulgaria</option>
+      <option>Burkina Faso</option>
+      <option>Burundi</option>
+      <option>Cabo Verde</option>
+      <option>Cambodia</option>
+      <option>Cameroon</option>
+      <option>Canada</option>
+      <option>Central African Republic</option>
+      <option>Chad</option>
+      <option>Chile</option>
+      <option>China</option>
+      <option>Colombia</option>
+      <option>Comoros</option>
+      <option>Congo</option>
+      <option>Costa Rica</option>
+      <option>Croatia</option>
+      <option>Cuba</option>
+      <option>Cyprus</option>
+      <option>Czech Republic</option>
+      <option>Democratic Republic of the Congo</option>
+      <option>Denmark</option>
+      <option>Djibouti</option>
+      <option>Dominica</option>
+      <option>Dominican Republic</option>
+      <option>Ecuador</option>
+      <option>Egypt</option>
+      <option>El Salvador</option>
+      <option>Equatorial Guinea</option>
+      <option>Eritrea</option>
+      <option>Estonia</option>
+      <option>Eswatini</option>
+      <option>Ethiopia</option>
+      <option>Fiji</option>
+      <option>Finland</option>
+      <option>France</option>
+      <option>Gabon</option>
+      <option>Gambia</option>
+      <option>Georgia</option>
+      <option>Germany</option>
+      <option>Ghana</option>
+      <option>Greece</option>
+      <option>Grenada</option>
+      <option>Guatemala</option>
+      <option>Guinea</option>
+      <option>Guinea-Bissau</option>
+      <option>Guyana</option>
+      <option>Haiti</option>
+      <option>Honduras</option>
+      <option>Hungary</option>
+      <option>Iceland</option>
+      <option>India</option>
+      <option>Indonesia</option>
+      <option>Iran</option>
+      <option>Iraq</option>
+      <option>Ireland</option>
+      <option>Italy</option>
+      <option>Jamaica</option>
+      <option>Japan</option>
+      <option>Jordan</option>
+      <option>Kazakhstan</option>
+      <option>Kenya</option>
+      <option>Kiribati</option>
+      <option>Kuwait</option>
+      <option>Kyrgyzstan</option>
+      <option>Laos</option>
+      <option>Latvia</option>
+      <option>Lebanon</option>
+      <option>Lesotho</option>
+      <option>Liberia</option>
+      <option>Libya</option>
+      <option>Liechtenstein</option>
+      <option>Lithuania</option>
+      <option>Luxembourg</option>
+      <option>Madagascar</option>
+      <option>Malawi</option>
+      <option>Malaysia</option>
+      <option>Maldives</option>
+      <option>Mali</option>
+      <option>Malta</option>
+      <option>Marshall Islands</option>
+      <option>Mauritania</option>
+      <option>Mauritius</option>
+      <option>Mexico</option>
+      <option>Micronesia</option>
+      <option>Moldova</option>
+      <option>Monaco</option>
+      <option>Mongolia</option>
+      <option>Montenegro</option>
+      <option>Morocco</option>
+      <option>Mozambique</option>
+      <option>Myanmar</option>
+      <option>Namibia</option>
+      <option>Nauru</option>
+      <option>Nepal</option>
+      <option>Netherlands</option>
+      <option>New Zealand</option>
+      <option>Nicaragua</option>
+      <option>Niger</option>
+      <option>Nigeria</option>
+      <option>North Korea</option>
+      <option>North Macedonia</option>
+      <option>Norway</option>
+      <option>Oman</option>
+      <option>Pakistan</option>
+      <option>Palau</option>
+      <option>Palestine</option>
+      <option>Panama</option>
+      <option>Papua New Guinea</option>
+      <option>Paraguay</option>
+      <option>Peru</option>
+      <option>Philippines</option>
+      <option>Poland</option>
+      <option>Portugal</option>
+      <option>Qatar</option>
+      <option>Romania</option>
+      <option>Russia</option>
+      <option>Rwanda</option>
+      <option>Saint Kitts and Nevis</option>
+      <option>Saint Lucia</option>
+      <option>Saint Vincent and the Grenadines</option>
+      <option>Samoa</option>
+      <option>San Marino</option>
+      <option>Sao Tome and Principe</option>
+      <option>Saudi Arabia</option>
+      <option>Senegal</option>
+      <option>Serbia</option>
+      <option>Seychelles</option>
+      <option>Sierra Leone</option>
+      <option>Singapore</option>
+      <option>Slovakia</option>
+      <option>Slovenia</option>
+      <option>Solomon Islands</option>
+      <option>Somalia</option>
+      <option>South Africa</option>
+      <option>South Korea</option>
+      <option>South Sudan</option>
+      <option>Spain</option>
+      <option>Sri Lanka</option>
+      <option>Sudan</option>
+      <option>Suriname</option>
+      <option>Sweden</option>
+      <option>Switzerland</option>
+      <option>Syria</option>
+      <option>Tajikistan</option>
+      <option>Tanzania</option>
+      <option>Thailand</option>
+      <option>Timor-Leste</option>
+      <option>Togo</option>
+      <option>Tonga</option>
+      <option>Trinidad and Tobago</option>
+      <option>Tunisia</option>
+      <option>Turkey</option>
+      <option>Turkmenistan</option>
+      <option>Tuvalu</option>
+      <option>Uganda</option>
+      <option>Ukraine</option>
+      <option>United Arab Emirates</option>
+      <option>United Kingdom</option>
+      <option>United States</option>
+      <option>Uruguay</option>
+      <option>Uzbekistan</option>
+      <option>Vanuatu</option>
+      <option>Vatican City</option>
+      <option>Venezuela</option>
+      <option>Vietnam</option>
+      <option>Yemen</option>
+      <option>Zambia</option>
+      <option>Zimbabwe</option>
+      <option>Lebanon</option>
+    </select>
+
+    <div id="info" class="info" aria-live="polite">
+      <h2>Selected country info</h2>
+      <p class="muted">Email and phone will appear here after you select a country.</p>
+    </div>
+
+    <p class="small">use template: ,
+
+I am writing as a citizen of [Country] to respectfully urge your Mission to boycott the upcoming speech of the Israeli Prime Minister at the United Nations on 26 September 2025.
+
+This is not only a political matter, but a moral obligation. The ongoing war crimes and acts of genocide in Gaza must not be ignored or legitimised. Every child who has been killed, starved, or displaced is a reminder that the world must act with conscience and courage.
+
+By refusing to attend this speech, [Country] will send a clear and principled message: that we stand against war crimes, against genocide, and for the protection of innocent civilians—especially children who depend on us for their survival and dignity.
+
+For the sake of humanity, and for the children of Gaza, I urge you to act with integrity and join other nations in boycotting this speech.
+
+Respectfully,
+.</p>
+  </div>
+
+  <script>
+    const embassies = {
+      "Afghanistan": { email: "info@afghanistan-un.org", phone: "(212) 972-1212" },
+      "Albania": { email: "mission.newyork@mfa.gov.al", phone: "(212) 249-2059, -5654" },
+      "Algeria": { email: "algeria@un.int", phone: "(212) 750-1960, -1962, -1965, -1966" },
+      "Andorra": { email: "contact@andorraun.org", phone: "(212) 750-8064, -8065" },
+      "Angola": { email: "themission@angolaun.org", phone: "(212) 861-5656, -5787, -5789" },
+      "Antigua and Barbuda": { email: "unmission@abgov.org", phone: "(212) 541-4117" },
+      "Argentina": { email: "enaun@mrecic.gov.ar", phone: "(212) 688-6300" },
+      "Armenia": { email: "armenia@un.int", phone: "(212) 686-9079, -3871" },
+      "Australia": { email: "australia@un.int", phone: "(212) 351-6600" },
+      "Austria": { email: "new-york-ov@bmeia.gv.at", phone: "(917) 542-8400" },
+      "Azerbaijan": { email: "azerbaijan@un.int", phone: "(212) 371-2559" },
+      "Bahamas": { email: "mission@bahamasny.com", phone: "(212) 421-6420" },
+      "Bahrain": { email: "bahrain1@un.int", phone: "(212) 223-6200" },
+      "Bangladesh": { email: "bangladesh@un.int", phone: "(212) 867-3434" },
+      "Barbados": { email: "barbados@un.int", phone: "(212) 867-8435" },
+      "Belarus": { email: "usaun@mfa.gov.by", phone: "(212) 684-5879" },
+      "Belgium": { email: "newyorkun@diplobel.fed.be", phone: "(212) 586-5110" },
+      "Belize": { email: "blzun@belizemission.com", phone: "(212) 986-1240" },
+      "Benin": { email: "beninewyork@gmail.com", phone: "(212) 684-1339" },
+      "Bhutan": { email: "bhutanmission@pmbny.bt", phone: "(212) 682-2268" },
+      "Bolivia": { email: ": missionboliviaun@gmail.com", phone: "(212) 682-8132, -8133, -4113" },
+      "Bosnia and Herzegovina": { email: "bihun@mfa.gov.ba", phone: "(212) 751-9015" },
+      "Botswana": { email: "botswana@un.int", phone: "(212) 889-2277" },
+      "Brazil": { email: "Distri.delbrasonu@itamaraty.gov.br", phone: "(212) 372-2600" },
+      "Brunei": { email: "brunei@un.int", phone: "(212) 697-3465" },
+      "Bulgaria": { email: "mission.newyork@mfa.bg", phone: "(212) 935-4646" },
+      "Burkina Faso": { email: "bfapm@un.int", phone: "(212) 308-4720" },
+      "Burundi": { email: "ambabunewyork@yahoo.fr", phone: "(212) 499-0001" },
+      "Cabo Verde": { email: "", phone: "" },
+      "Cambodia": { email: "cambodia@un.int", phone: "(212) 336-0777" },
+      "Cameroon": { email: "cameroon@un.int", phone: "(212) 316-7640" },
+      "Canada": { email: "canada.un@international.gc.ca", phone: "(212) 848-1100" },
+      "Central African Republic": { email: "repercaf.ny@gmail.com", phone: "(212) 370-8910" },
+      "Chad": { email: "chad@un.int", phone: "(212) 986-0980" },
+      "Chile": { email: "chile@un.int", phone: "(212) 832-0570" },
+      "China": { email: "chinesemission@yahoo.com", phone: "(212) 655-6100" },
+      "Colombia": { email: "colombia@colombiaun.org", phone: "(212) 972-1680" },
+      "Comoros": { email: "comoros@un.int", phone: "(212) 972-8010" },
+      "Congo": { email: "congo@un.int", phone: "(212) 744-7840" },
+      "Costa Rica": { email: "costarica@un.int", phone: "(212) 986-6373" },
+      "Croatia": { email: "cromiss.un@mvep.hr", phone: "(212) 986-1585" },
+      "Cuba": { email: "cuba_onu@cubanmission.com", phone: "(212) 689-7215" },
+      "Cyprus": { email: "cmission@cyprusun.org", phone: "(212) 481-6023" },
+      "Czech Republic": { email: "un.newyork@embassy.mzv.cz", phone: "(212) 717-4490" },
+      "Democratic Republic of the Congo": { email: "", phone: "" },
+      "Denmark": { email: "dnycmis@um.dk", phone: "(212) 223-9190" },
+      "Djibouti": { email: "djibouti@nyct.net", phone: "(212) 753-3163" },
+      "Dominica": { email: "dominica@un.int", phone: "(212) 599-8478" },
+      "Dominican Republic": { email: "dominican@un.int", phone: "(212) 867-0833" },
+      "Ecuador": { email: "ecuador@un.int", phone: "(212) 935-1680" },
+      "Egypt": { email: "pr.egypt@un.int", phone: "(212) 759-7120" },
+      "El Salvador": { email: "elsalvador@un.int", phone: "(212) 889-9800" },
+      "Equatorial Guinea": { email: "equatorialguinea@un.int", phone: "(212) 986-9301" },
+      "Eritrea": { email: "general@eritrea-unmission.org", phone: "(212) 687-3390" },
+      "Estonia": { email: "mission.newyork@mfa.ee", phone: "(212) 883-0636" },
+      "Eswatini": { email: "swaziland@un.int", phone: "(212) 371-8914" },
+      "Ethiopia": { email: "ethiopia@un.int", phone: "(212) 421-1830" },
+      "Fiji": { email: "mission@fijiprun.org", phone: "(212) 687-4130" },
+      "Finland": { email: "sanomat.yke@formin.fi", phone: "(212) 750-4400" },
+      "France": { email: "france@franceonu.org", phone: "(212) 308-5700" },
+      "Gabon": { email: "info@gabonunmission.com", phone: "(212) 686-9720; -9721; -1705" },
+      "Gambia": { email: "gambia_un@hotmail.com", phone: "(212) 949-6640" },
+      "Georgia": { email: "geomission.un@mfa.gov.ge", phone: "(212) 759-1949" },
+      "Germany": { email: "info@new-york-un.diplo.de", phone: "(212) 940-0400" },
+      "Ghana": { email: "ghanaperm@aol.com", phone: "(212) 832-1300" },
+      "Greece": { email: "grdel.un@mfa.gr", phone: "(212) 888-6900 / (212) 479-1300" },
+      "Grenada": { email: "grenada@un.int", phone: "(212) 599-0301, -0302" },
+      "Guatemala": { email: "guatemala@un.int; onupnud@minex.gob.gt", phone: "(212) 679-4760" },
+      "Guinea": { email: "guinearepny@aol.com", phone: "(212) 687-8115" },
+      "Guinea-Bissau": { email: "gnbissau@un.int", phone: "(212) 661-4634" },
+      "Guyana": { email: "guyana@un.int", phone: "(212) 867-3895" },
+      "Haiti": { email: "mphonu.newyork@diplomatie.ht", phone: "(212) 370-4840" },
+      "Honduras": { email: "honduras@un.int", phone: "(212) 752-3370" },
+      "Hungary": { email: "hungary@un.int", phone: "(212) 752-0209" },
+      "Iceland": { email: "unmission@mfa.is", phone: "(212) 593-2700 / (646) 282-9370" },
+      "India": { email: "india@un.int; ind_general@indiaun.net", phone: "(212) 490-9660, -9661" },
+      "Indonesia": { email: "ptri@indonesiamission-ny.org", phone: "(212) 972-8333" },
+      "Iran": { email: "iran@un.int", phone: "(212) 687-2020" },
+      "Iraq": { email: "iraqny@un.int", phone: "(212) 752-7310" },
+      "Ireland": { email: "newyorkpmun@dfa.ie", phone: "(212) 421-6934" },
+      "Italy": { email: "info.italyun@esteri.it", phone: "(212) 486-9191" },
+      "Jamaica": { email: "jamaica@un.int", phone: "(212) 935-7509" },
+      "Japan": { email: "p-m-j@dn.mofa.go.jp", phone: "(212) 223-4300" },
+      "Jordan": { email: "missionun@jordanmissionun.com", phone: "(212) 355-2670" },
+      "Kazakhstan": { email: "kazakhstan@un.int", phone: "(212) 230-1900" },
+      "Kenya": { email: "kenya@un.int", phone: "(212) 421-4740" },
+      "Kiribati": { email: "kiribati@un.int", phone: "(212) 867-3310" },
+      "Kuwait": { email: ": contact@kuwaitmission.org", phone: "(212) 973-4300" },
+       "Madagascar": { email:"madagascar@un.int", phone:"(212) 986-9491" },
+      "Malawi": { email:"malawi@un.int", phone:"(212) 949-0180" },
+      "Malaysia": { email:"malaysia@un.int", phone:"(212) 986-6310" },
+      "Maldives": { email:"maldives@un.int", phone:"(212) 599-6195" },
+      "Mali": { email:"mali@un.int", phone:"(212) 213-0830" },
+      "Malta": { email:"malta@un.int", phone:"(212) 725-2345" },
+      "Malta": { email:"malta@un.int", phone:"(212) 725-2345" },
+      "Marshall Islands": { email:"marshallislands@un.int", phone:"(212) 983-3040" },
+      "Mauritania": { email:"mauritania@un.int", phone:"(212) 252-3505" },
+      "Mexico": { email:"mexico@un.int", phone:"(212) 752-0220" },
+      "Micronesia": { email:"micronesia@un.int", phone:"(212) 697-8370" },
+      "Moldova": { email:"unmoldova@aol.com", phone:"(212) 687-3390" },
+      "Monaco": { email:": Monaco.un@gmail.com", phone:"(212) 421-3700" },
+      "Mongolia": { email:"mongolia@un.int", phone:"(212) 861-9460" },
+      "Montenegro": { email:"UN.NewYork@mfa.gov.me", phone:"(212) 661-2975" },
+      "Morocco": { email:"morocco.un@maec.gov.ma", phone:"(212) 421-1580" },
+      "Mozambique": { email:"mozambique@un.int", phone:"(212) 644-5970" },
+      "Myanmar": { email:"myanmar@un.int", phone:"(212) 744-1271" },
+      "Namibia": { email:"namibia@un.int", phone:"(212) 949-1600" },
+      "Nauru": { email:"nauru@un.int", phone:"(212) 937-0074" },
+      "Nepal": { email:"nepal@un.int", phone:"(212) 370-3988" },
+      "Netherlands": { email:"nyv@minbuza.nl", phone:"(212) 519-9500" },
+      "New Zealand": { email:"nzpmun@gmail.com", phone:"(212) 832-4038" },
+      "Nicaragua": { email:"nicaragua@un.int", phone:"(212) 490-7997" },
+      "Niger": { email:"niger@un.int", phone:"(212) 421-3260" },
+      "Nigeria": { email:"nigeria@un.int", phone:"(212) 953-9130" },
+      "North Korea": { email:"dprk@un.int", phone:"(212) 972-3105" },
+      "North Macedonia": { email:"macedonia@un.int", phone:"(212) 935-8870" },
+      "Norway": { email:"un.newyork@mfa.no", phone:"(212) 421-0280" },
+      "Oman": { email:"oman@un.int", phone:"(212) 355-3505" },
+      "Pakistan": { email:"pakistan@un.int", phone:"(212) 879-8600" },
+      "Palau": { email:"palau@un.int", phone:"(212) 813-0315" },
+      "Palestine": { email:"palestine@un.int", phone:"(212) 288-8500" },
+      "Panama": { email:"emb@panama-un.org", phone:"(212) 840-5566" },
+      "Papua New Guinea": { email:"png@un.int", phone:"(212) 682-6447" },
+      "Paraguay": { email:"paraguay@un.int", phone:"(212) 832-5400" },
+      "Peru": { email:"onuper@unperu.org", phone:"(212) 972-4810" },
+      "Philippines": { email:"philippines@un.int", phone:"(212) 764-1300" },
+      "Poland": { email:"poland.un@msz.gov.pl", phone:"(212) 744-2506" },
+      "Portugal": { email:"portugal@un.int", phone:"(212) 246-4580" },
+      "Qatar": { email:"pmun@mofa.gov.qa", phone:"(212) 486-9335" },
+      "Romania": { email:"misiune@romaniaun.org", phone:"(212) 682-3273" },
+      "Russia": { email:"press@russiaun.ru", phone:"(212) 861-4900" },
+      "Rwanda": { email:"ambanewyork@minaffet.gov.rw", phone:"(212) 679-9010" },
+      "Saint Kitts and Nevis": { email:"stkitts@un.int", phone:"(212) 986-6010" },
+      "Saint Lucia": { email:"stlucia@un.int", phone:"(212) 697-9360" },
+      "Saint Vincent and the Grenadines": { email:"stvincent@un.int", phone:"(212) 546-1234" },
+      "Samoa": { email:"samoa@un.int", phone:"(212) 599-6191" },
+      "San Marino": { email:"sanmarino@un.int", phone:"(212) 751-1234" },
+      "Sao Tome and Principe": { email:"saotome@un.int", phone:"(212) 317-0533" },
+      "Saudi Arabia": { email:"saudi-mission@un.int", phone:"(212) 557-1525" },
+      "Senegal": { email:"senegal@un.int", phone:"(212) 517-6464" },
+      "Serbia": { email:"info@serbiamissionun.org", phone:"(212) 596-4241" },
+      "Seychelles": { email:"seychelles@un.int", phone:"(212) 972-1785" },
+      "Sierra Leone": { email:"sierraleone@un.int", phone:"(212) 688-1656" },
+      "Singapore": { email:"singapore@un.int", phone:"(212) 826-0840" },
+      "Slovakia": { email:"un.newyork@mzv.sk", phone:"(212) 286-8880" },
+      "Slovenia": { email:"slovenia@un.int", phone:"(212) 370-3007" },
+      "Solomon Islands": { email:"solomonislands@un.int", phone:"(212) 599-6192" },
+      "Somalia": { email:"somalia@un.int", phone:"(212) 972-1786" },
+      "South Africa": { email:"pmun.newyork@dirco.gov.za", phone:"(212) 213-5583" },
+      "South Korea": { email:"korea@un.int", phone:"(212) 439-4000" },
+      "South Sudan": { email:"southsudan@un.int", phone:"(212) 752-1040" },
+      "Spain": { email:"Rep.nuevayorkonu@maec.es", phone:"(212) 799-7800" },
+      "Sri Lanka": { email:"srilanka@un.int", phone:"(212) 986-7040" },
+      "Sudan": { email:"sudan@sudanmission.org", phone:"(212) 573-6033" },
+      "Suriname": { email:"suriname@un.int", phone:"(212) 826-0660" },
+      "Sweden": { email:"sweden@un.int", phone:"(212) 583-2550" },
+      "Switzerland": { email:"nyc.vertretung-un@eda.admin.ch", phone:"(212) 692-1100" },
+      "Syria": { email:"exesec.syria@gmail.com", phone:"(212) 983-4030" },
+      "Tajikistan": { email:"tajikistan@un.int", phone:"(212) 972-7212" },
+      "Tanzania": { email:"tanzania@un.int", phone:"(212) 972-9160" },
+      "Thailand": { email:"thailand@un.int", phone:"(212) 754-2230" },
+      "Timor-Leste": { email:"timorleste@un.int", phone:"(212) 557-0075" },
+      "Togo": { email:"togo@un.int", phone:"(212) 490-3455" },
+      "Tonga": { email:"tonga@un.int", phone:"(212) 490-7800" },
+      "Trinidad and Tobago": { email:"trinidad@un.int", phone:"(212) 697-7620" },
+      "Tunisia": { email:"tunisnyc@nyc.rr.com", phone:"(212) 751-7503" },
+      "Turkey": { email:"tr-delegation.newyork@mfa.gov.tr", phone:"(212) 351-6300" },
+      "Turkmenistan": { email:"turkmenistan@un.int", phone:"(212) 486-8900" },
+      "Tuvalu": { email:"tuvalu@un.int", phone:"(212) 490-0534" },
+      "Uganda": { email:"uganda@un.int", phone:"(212) 949-0110" },
+      "Ukraine": { email:"uno_us@mfa.gov.ua", phone:"(212) 759-7003" },
+      "United Arab Emirates": { email:"newyork@mofa.gov.ae", phone:"(212) 371-0480" },
+      "United Kingdom": { email:"uk@un.int", phone:"(212) 745-9200" },
+      "United States": { email:"USUNPolFax@state.gov", phone:"(212) 415-4000" },
+      "Uruguay": { email:"urudeleg@mrree.gub.uy", phone:"(212) 753-8191" },
+      "Uzbekistan": { email:"uzbekistan@un.int", phone:"(212) 754-7403" },
+      "Vanuatu": { email:"vanuatu@un.int", phone:"(212) 593-0145" },
+      "Vatican City": { email:"holysee@un.int", phone:"(212) 370-7885" },
+      "Venezuela": { email:": misionvenezuelaonu@gmail.com", phone:"(212) 826-1660" },
+      "Vietnam": { email:"info@vietnam-un.org", phone:"(212) 644-2530" },
+      "Yemen": { email:"YMISS-NEWYORK@MOFA.GOV.YE", phone:"(212) 355-1730" },
+      "Zambia": { email:"zambia@un.int", phone:"(212) 888-5770" },
+      "Zimbabwe": { email:"zimbabwe@un.int", phone:"(212) 980-9511" },
+      "Luxembourg": { email:"newyork.rp@mae.etat.lu", phone:"(212) 935-3589" },
+      "Lebanon": { email:"contact@lebanonun.org", phone:"(212) 355-5460" },
+      "Libya": { email:"info@libyanmission-un.org", phone:"(212) 593-4787" },
+    };
+
+    document.getElementById("countrySelect").addEventListener("change", function() {
+      const country = this.value;
+      const infoDiv = document.getElementById("info");
+      if (country && embassies[country]) {
+        const data = embassies[country];
+        infoDiv.innerHTML = `
+          <h3>${country}</h3>
+          <p><strong>Email:</strong> ${data.email ? `<a href="mailto:${data.email}">${data.email}</a>` : "Not listed"}</p>
+          <p><strong>Phone:</strong> ${data.phone || "Not listed"}</p>
+        `;
+      } else {
+        infoDiv.innerHTML = "";
+      }
+    });
+  </script>
+</body>
+</html>
